@@ -76,7 +76,7 @@ const adminAppointments = async (req,res)=>{
 //api to cancel appointment
 const adminCancelAppointment = async (req,res)=>{
     try {
-        const {userId,appointmentId}=req.body
+        const {appointmentId}=req.body
         const appointmentData=await appointmentModel.findById(appointmentId)
         await appointmentModel.findByIdAndUpdate(appointmentId,{cancelled:true})
 

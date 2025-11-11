@@ -29,7 +29,6 @@ const Appointment = () => {
     }
     try {
       const date = carpSlots[slotIndex][0].datetime
-
         let day = date.getDate()
         let month = date.getMonth() + 1
         let year = date.getFullYear()
@@ -123,7 +122,7 @@ const Appointment = () => {
           <p className='flex items-center gap-2 text-3xl font-medium text-gray-700'>{carpInfo.name} <img className='w-5' src={assets.verified_icon} alt="" /></p>
           <div className='flex items-center gap-2 mt-1 text-gray-600'>
             <p>{carpInfo.expertise}</p>
-            <button className='py-0.5 px-2 border text-xs rounded-full'>{carpInfo.experience} years</button>
+            <button className='py-0.5 px-2 border text-xs rounded-full'>{carpInfo.experience}</button>
           </div>
           <div>
             <p className='flex items-center gap-1 text-sm font-medium text-gray-900 mt-3'>

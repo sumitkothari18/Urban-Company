@@ -7,6 +7,8 @@ const Login = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState('');
+
   const [state, setState] = useState('Sign Up')
   const navigate=useNavigate();
 
@@ -16,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try {
       if (state === 'Sign Up') {
-        const { data } = await axios.post(backendUrl + '/api/user/register', { name, email, password });
+        const { data } = await axios.post(backendUrl + '/api/user/register', { name, email, password,phone});
         if (data.success) {
           localStorage.setItem('token', data.token)
           setToken(data.token)
@@ -59,6 +61,8 @@ const Login = () => {
             ? <div className='w-full '>
               <p>Full Name</p>
               <input onChange={(e) => setName(e.target.value)} value={name} className='border border-[#DADADA] rounded w-full p-2 mt-1' type="text" required />
+              <p>Phone</p>
+              <input onChange={(e) => setPhone(e.target.value)} value={phone} className='border border-[#DADADA] rounded w-full p-2 mt-1' type="text" required />
             </div>
             : null
           }

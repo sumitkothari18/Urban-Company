@@ -1,8 +1,9 @@
-import React , {useContext} from 'react'
+import React , {useContext, useState} from 'react'
 import { assets } from '../assets/assets'
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 const Carpenters = () => {
+  
   const {carpenters}=useContext(AppContext);
   const navigate=useNavigate();
   return (
